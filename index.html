@@ -251,6 +251,41 @@
     .card-instagram .btn-follow:hover { color: #c32aa3; border-color: #c32aa3; background: #fff0f7; }
     .card-tiktok .btn-follow:hover { color: #000000; border-color: #000000; background: #f2f2f2; }
 
+    /* Dropdown styling */
+    .location-select {
+      width: 100%;
+      padding: 12px 16px;
+      margin: 15px 0;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #1e3e4a;
+      background-color: #f8fbfe;
+      border: 2px solid #dce5ec;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+      appearance: none;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%232c7da0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+      background-repeat: no-repeat;
+      background-position: left 16px center;
+    }
+    .location-select:hover, .location-select:focus {
+      border-color: #2A9D8F;
+      outline: none;
+      background-color: #ffffff;
+    }
+    .branch-badge {
+      display: inline-block;
+      background: #2A9D8F;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 60px;
+      font-size: 0.75rem;
+      margin-top: 5px;
+    }
+
     .footer-note {
       background: #f9fdfe;
       padding: 1rem 2rem;
@@ -292,7 +327,7 @@
       </div>
       <div class="tagline">
         <span><i class="fas fa-smile-wink"></i> ابتسامتك مسؤوليتنا</span>
-        <span><i class="fas fa-map-marker-alt"></i> صور - بيروت </span>
+        <span><i class="fas fa-map-marker-alt"></i> عيادات White Smile</span>
       </div>
     </div>
 
@@ -335,12 +370,20 @@
           <div style="font-size: 12px; margin-top: 10px; color:#8ba9bc;">نصائح يومية</div>
         </div>
 
-        <!-- Location / Google Maps -->
+        <!-- Location / Google Maps with Dropdown -->
         <div class="social-card card-location">
           <div class="social-icon"><i class="fas fa-map-marker-alt"></i></div>
           <div class="social-name">موقع العيادة</div>
-          <div class="location-address">📍 احصل على الاتجاهات</div>
-          <a href="https://maps.app.goo.gl/VXoA647oeDGeTa6s8" class="btn-follow" target="_blank" rel="noopener noreferrer">
+          <div class="location-address">📍 اختر الفرع المناسب لك</div>
+          
+          <!-- Dropdown menu for location selection -->
+          <select id="locationSelect" class="location-select" aria-label="اختيار فرع العيادة">
+            <option value="tyre">🏥 فرع صور - White Smile Dental Clinic</option>
+            <option value="beirut">🏢 فرع بيروت - White Smile Dental Clinic</option>
+          </select>
+          
+          <!-- Dynamic link that changes based on selection -->
+          <a href="#" id="dynamicMapLink" class="btn-follow" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-directions"></i> افتح في خرائط Google
           </a>
           <div style="font-size: 12px; margin-top: 10px; color:#8ba9bc;">اضغط لفتح الموقع</div>
@@ -350,9 +393,43 @@
 
     <div class="footer-note">
       <span><i class="far fa-copyright"></i> 2026  WHITE SMILE DENTAL CLINIC - جميع الحقوق محفوظة</span>
-      <span><i class="fas fa-heart" style="color:#d58392;"></i> Dr Ahmad Abou Saleh - Specialist in Oral Surgery and Detal Implants </span>
+      <span><i class="fas fa-heart" style="color:#d58392;"></i> د. أحمد أبو صالح | أخصائي في جراحة الفم وزرع الأسنان </span>
     </div>
   </div>
 </div>
+
+<script>
+  // Define the map links for each branch
+  const branchLinks = {
+    tyre: "https://maps.app.goo.gl/VXoA647oeDGeTa6s8",
+    beirut: "https://maps.app.goo.gl/YXPQzXuQaNsxqr4C7"
+  };
+
+  // Get DOM elements
+  const locationSelect = document.getElementById('locationSelect');
+  const dynamicLink = document.getElementById('dynamicMapLink');
+
+  // Function to update the link based on selected branch
+  function updateMapLink() {
+    const selectedBranch = locationSelect.value;
+    const newLink = branchLinks[selectedBranch];
+    
+    if (newLink) {
+      dynamicLink.href = newLink;
+      // Optional: add a small animation effect
+      dynamicLink.style.transform = 'scale(1.02)';
+      setTimeout(() => {
+        dynamicLink.style.transform = 'scale(1)';
+      }, 200);
+    }
+  }
+
+  // Set initial link (default to Tyre)
+  updateMapLink();
+
+  // Add event listener for when selection changes
+  locationSelect.addEventListener('change', updateMapLink);
+</script>
+
 </body>
 </html>
