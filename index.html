@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>White Smile Dental Clinic | د. أحمد أبو صالح - الروابط الرسمية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(145deg, #f0f9ff 0%, #e9f2f9 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      position: relative;
+    }
+
+    body::before {
+      content: "🦷";
+      font-size: 220px;
+      opacity: 0.04;
+      position: fixed;
+      bottom: -30px;
+      left: -40px;
+      pointer-events: none;
+      transform: rotate(-10deg);
+      z-index: 0;
+    }
+
+    .card-container {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 56px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .clinic-header {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F8FBFE 100%);
+      padding: 2.5rem 2rem 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(0, 108, 112, 0.12);
+    }
+
+    .dentist-icon {
+      background: #eef7fc;
+      width: 90px;
+      height: 90px;
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 12px 20px -12px rgba(0, 160, 170, 0.3);
+    }
+
+    .dentist-icon i {
+      font-size: 48px;
+      color: #2c7da0;
+    }
+
+    .clinic-name {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(120deg, #1F5E6E, #2A9D8F);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .doctor-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2d6a4f;
+      background: #e9f5ef;
+      display: inline-block;
+      padding: 0.3rem 1.5rem;
+      border-radius: 40px;
+      margin-top: 0.5rem;
+    }
+
+    .doctor-title i {
+      margin-left: 6px;
+    }
+
+    .tagline {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #4b6a7c;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tagline span {
+      background: #f0f4f8;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+    }
+
+    .social-section {
+      padding: 2rem 2rem 2rem 2rem;
+      background: #ffffff;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #1e3e4a;
+      margin-bottom: 2rem;
+      position: relative;
+      width: 100%;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 4px;
+      background: linear-gradient(90deg, #2A9D8F, #6ab0de);
+      border-radius: 4px;
+      margin: 12px auto 0;
+    }
+
+    .social-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 0.8rem;
+    }
+
+    .social-card {
+      flex: 1;
+      min-width: 220px;
+      max-width: 280px;
+      background: #ffffff;
+      border-radius: 44px;
+      padding: 1.8rem 1rem 2rem;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(42, 157, 143, 0.2);
+    }
+
+    .social-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 34px -16px rgba(0, 0, 0, 0.2);
+      border-color: rgba(42, 157, 143, 0.5);
+    }
+
+    .social-icon {
+      font-size: 3.7rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .social-name {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .social-handle {
+      font-size: 0.85rem;
+      color: #5f7f8c;
+      background: #f2f6f9;
+      padding: 6px 12px;
+      border-radius: 50px;
+      display: inline-block;
+      margin: 0.8rem 0;
+      font-weight: 500;
+      direction: ltr;
+    }
+
+    .btn-follow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #f0f4fa;
+      padding: 0.7rem 1.5rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #1f3b44;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      margin-top: 0.6rem;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+    }
+
+    .social-card:hover .btn-follow {
+      background: #ffffff;
+      border-color: currentColor;
+      gap: 0.9rem;
+    }
+
+    /* Location Card Specific Styles */
+    .card-location {
+        border: 1px solid rgba(42, 157, 143, 0.3);
+        background: #fefef7;
+    }
+    .card-location .social-icon {
+        color: #ea4335; /* Google Maps red */
+    }
+    .card-location .btn-follow:hover {
+        color: #ea4335;
+        border-color: #ea4335;
+        background: #fff5f5;
+    }
+    .location-address {
+        font-size: 0.85rem;
+        color: #2c5f6e;
+        background: #eef3f5;
+        padding: 6px 12px;
+        border-radius: 50px;
+        display: inline-block;
+        margin: 0.5rem 0;
+        font-weight: 500;
+    }
+
+    .card-facebook .social-icon { color: #1877f2; }
+    .card-instagram .social-icon { color: #d62976; }
+    .card-tiktok .social-icon { color: #000000; }
+
+    .card-facebook .btn-follow:hover { color: #1877f2; border-color: #1877f2; background: #f0f5ff; }
+    .card-instagram .btn-follow:hover { color: #c32aa3; border-color: #c32aa3; background: #fff0f7; }
+    .card-tiktok .btn-follow:hover { color: #000000; border-color: #000000; background: #f2f2f2; }
+
+    .footer-note {
+      background: #f9fdfe;
+      padding: 1rem 2rem;
+      text-align: center;
+      border-top: 1px solid #e2edf2;
+      font-size: 0.85rem;
+      color: #5b7e8c;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    @media (max-width: 780px) {
+      .clinic-name { font-size: 1.7rem; }
+      .social-grid { gap: 1.2rem; }
+      .social-card { min-width: 200px; }
+      .profile-card { border-radius: 40px; }
+      .social-section { padding: 1.8rem; }
+    }
+
+    @media (max-width: 550px) {
+      .social-card { min-width: 100%; max-width: 320px; }
+      .clinic-header { padding: 1.8rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="card-container">
+  <div class="profile-card">
+    <div class="clinic-header">
+      <div class="dentist-icon">
+        <i class="fas fa-tooth"></i>
+      </div>
+      <h1 class="clinic-name">WHITE SMILE <span style="font-weight:600;">DENTAL CLINIC</span></h1>
+      <div class="doctor-title">
+        <i class="fas fa-user-md"></i> د. أحمد أبو صالح - أخصائي في جراحة الفم وزرع الأسنان 
+      </div>
+      <div class="tagline">
+        <span><i class="fas fa-smile-wink"></i> ابتسامتك مسؤوليتنا</span>
+        <span><i class="fas fa-map-marker-alt"></i> صور - بيروت </span>
+      </div>
+    </div>
+
+    <div class="social-section">
+      <div class="section-title">
+        <i class="fas fa-share-alt" style="margin-left: 8px;"></i> تابع حساباتي الرسمية
+      </div>
+      <div class="social-grid">
+        
+        <!-- Facebook -->
+        <div class="social-card card-facebook">
+          <div class="social-icon"><i class="fab fa-facebook"></i></div>
+          <div class="social-name">فيسبوك</div>
+          <div class="social-handle ltr-handle">WhiteSmile Dental Clinic</div>
+          <a href="https://www.facebook.com/whitesmiledentalclinic" class="btn-follow" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook-f"></i> صفحة العيادات
+          </a>
+          <div style="font-size: 12px; margin-top: 10px; color:#8ba9bc;">رابط مباشر للحساب الرسمي</div>
+        </div>
+        
+        <!-- Instagram -->
+        <div class="social-card card-instagram">
+          <div class="social-icon"><i class="fab fa-instagram"></i></div>
+          <div class="social-name">إنستجرام</div>
+          <div class="social-handle ltr-handle">@dr.ahmadabousaleh</div>
+          <a href="https://www.instagram.com/dr.ahmadabousaleh" class="btn-follow" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i> تابع على إنستجرام
+          </a>
+          <div style="font-size: 12px; margin-top: 10px; color:#8ba9bc;">أحدث ابتساماتنا</div>
+        </div>
+        
+        <!-- TikTok -->
+        <div class="social-card card-tiktok">
+          <div class="social-icon"><i class="fab fa-tiktok"></i></div>
+          <div class="social-name">تيك توك</div>
+          <div class="social-handle ltr-handle">@drahmadabousaleh</div>
+          <a href="https://www.tiktok.com/@drahmadabousaleh" class="btn-follow" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-tiktok"></i> محتوى طبي وتوعوي
+          </a>
+          <div style="font-size: 12px; margin-top: 10px; color:#8ba9bc;">نصائح يومية</div>
+        </div>
+
+        <!-- Location / Google Maps -->
+        <div class="social-card card-location">
+          <div class="social-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="social-name">موقع العيادة</div>
+          <div class="location-address">📍 احصل على الاتجاهات</div>
+          <a href="https://maps.app.goo.gl/VXoA647oeDGeTa6s8" class="btn-follow" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-directions"></i> افتح في خرائط Google
+          </a>
+          <div style="font-size: 12px; margin-top: 10px; color:#8ba9bc;">اضغط لفتح الموقع</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <span><i class="far fa-copyright"></i> 2026  WHITE SMILE DENTAL CLINIC - جميع الحقوق محفوظة</span>
+      <span><i class="fas fa-heart" style="color:#d58392;"></i> Dr Ahmad Abou Saleh - Specialist in Oral Surgery and Detal Implants </span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
